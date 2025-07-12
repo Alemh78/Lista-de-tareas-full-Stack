@@ -8,10 +8,10 @@ const jwt = require('jsonwebtoken');//librería que usás en Node.js para trabaj
 //Se utiliza en APIs, sitios web, apps móviles, etc.
 
 //Es un string dividido en 3 partes
-const JWT_SECRET = 'tu_clave_secreta';
+const JWT_SECRET = process.env.JWT_SECRET;
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const db = new sqlite3.Database('./tasks.db');
 

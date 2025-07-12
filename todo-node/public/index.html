@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lista de Tareas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1 class="titulo">Lista de Tareas</h1>
+
+  <div class="container">
+    <form id="task-form">
+      <input type="text" id="task-input" placeholder="Escribí una tarea..." required />
+      <button type="submit">Agregar</button>
+      
+    </form>
+    <ul id="task-list"></ul>
+    <button class="cerrar"  type="button" onclick="logout()">Cerrar sesión</button>
+  </div>
+
+  <script src="listaTareas.js"></script>
+</body>
+</html>

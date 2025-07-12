@@ -2,8 +2,12 @@ const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');//librería que usás en Node.js para trabajar con JWT
+//jwt Sirve para identificar de forma segura a un usuario.
 
+//Se utiliza en APIs, sitios web, apps móviles, etc.
+
+//Es un string dividido en 3 partes
 const JWT_SECRET = 'tu_clave_secreta';
 
 const app = express();
@@ -128,6 +132,11 @@ app.delete('/api/tasks/:id', (req, res) => {
 // Servir index.html por defecto
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+
+// Manejar rutas no encontradas (Error 404)
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 });
 
 // Iniciar servidor

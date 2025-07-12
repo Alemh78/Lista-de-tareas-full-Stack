@@ -98,10 +98,67 @@ li.completed span {
   font-weight: bold;
   transition: background-color 0.3s;
 }
+/*404*/
+body.error-404-body {
+  margin: 0;
+  min-height: 100vh;
 
-/* Mensaje de error */
-.msg {
+  background-image: url("imagenes/ups-error-404-ilustracion-concepto-robot-roto_114360-5529.png"); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  font-family: Arial, sans-serif;
   text-align: center;
-  color: #ffd1d1;
+  padding: 0 1rem;
+  color: rgb(14, 13, 13);
+}
+
+.error-404 {
+  max-width: 500px;
+  padding: 2rem;
+  
+}
+
+.error-404 h1 {
+  font-size: 6rem;
+  margin: 0;
+  color: #ff4c4c;
+}
+
+.error-404 p {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.error-404 img {
+  max-width: 100%;
+  height: auto;
+  margin: 2rem auto;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
+}
+
+.error-404 a {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: rgba(13, 110, 253, 0.8);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
   font-weight: bold;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.error-404 a:hover {
+  background-color: rgba(11, 94, 215, 0.9);
+}
+.error-404 {
+  margin-top: -500px; 
 }

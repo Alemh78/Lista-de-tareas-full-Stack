@@ -11,6 +11,7 @@ const jwt = require('jsonwebtoken');//librería que usás en Node.js para trabaj
 const JWT_SECRET = process.env.JWT_SECRET;
 
 const app = express();
+//const port=3000
 const port = process.env.PORT || 3000;
 
 const db = new sqlite3.Database('./tasks.db');
@@ -140,6 +141,8 @@ app.use((req, res) => {
 });
 
 // Iniciar servidor
-app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
+//app.listen(port, () => {
+  //console.log(`Servidor corriendo en http://localhost:${port}`);
+  app.listen(port, '0.0.0.0', () => {
+  console.log(`Servidor corriendo en http://0.0.0.0:${port}`);
 });

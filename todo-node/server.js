@@ -139,10 +139,12 @@ app.get('/', (req, res) => {
 app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 });
+ app.listen(port, '0.0.0.0', () => {
+  console.log(`Servidor corriendo en http://0.0.0.0:${port}`);
+});
+
 
 // Iniciar servidor
 //app.listen(port, () => {
   //console.log(`Servidor corriendo en http://localhost:${port}`);
-  app.listen(port, '0.0.0.0', () => {
-  console.log(`Servidor corriendo en http://0.0.0.0:${port}`);
-});
+ 

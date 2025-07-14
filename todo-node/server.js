@@ -4,7 +4,7 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-// 👉 Solución: valor por defecto para el secreto JWT
+
 const JWT_SECRET = process.env.JWT_SECRET || 'secreto123';
 
 const app = express();

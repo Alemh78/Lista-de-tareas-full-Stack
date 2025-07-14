@@ -2,17 +2,13 @@ const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
 const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');//librería que usás en Node.js para trabajar con JWT
-//jwt Sirve para identificar de forma segura a un usuario.
+const jwt = require('jsonwebtoken');
 
-//Se utiliza en APIs, sitios web, apps móviles, etc.
-
-//Es un string dividido en 3 partes
-const JWT_SECRET = process.env.JWT_SECRET;
+// 👉 Solución: valor por defecto para el secreto JWT
+const JWT_SECRET = process.env.JWT_SECRET || 'secreto123';
 
 const app = express();
-//const port=3000
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 const db = new sqlite3.Database('./tasks.db');
 
@@ -139,12 +135,12 @@ app.get('/', (req, res) => {
 app.use((req, res) => {
   res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 });
- app.listen(port, '0.0.0.0', () => {
-  console.log(`Servidor corriendo en http://0.0.0.0:${port}`);
-});
+ //app.listen(port, '0.0.0.0', () => {
+  //console.log(`Servidor corriendo en http://0.0.0.0:${port}`);
+//});
 
 
 // Iniciar servidor
-//app.listen(port, () => {
-  //console.log(`Servidor corriendo en http://localhost:${port}`);
- 
+app.listen(port, () => {
+  console.log(`Servidor corriendo en http://localhost:${port}`);
+ });
